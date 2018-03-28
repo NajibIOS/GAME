@@ -8,3 +8,16 @@
 
 import Foundation
 
+class Mage: Character {
+    
+    
+    // MAGE - Init
+    
+    init(name:String) {
+        super.init(name: name, weapon: Sword(), life: 90)
+    }
+    
+    func threat(target: Character) {
+        target.life += weapon.magicPower
+    }
+}
