@@ -24,3 +24,4 @@ class Character {
         self.life = life
         self.weapon = weapon
 }
+}
