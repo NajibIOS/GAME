@@ -15,3 +15,4 @@ class Crossbow : Weapon {
         super.init(name: "crossbow", damage: 20, magicPower: 0)
     }
 }
+

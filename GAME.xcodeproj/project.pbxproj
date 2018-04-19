@@ -18,6 +18,7 @@
 		9E40697B206BA00A00CA75BD /* Axe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E40697A206BA00A00CA75BD /* Axe.swift */; };
 		9E40697D206BA02200CA75BD /* Threat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E40697C206BA02200CA75BD /* Threat.swift */; };
 		9E419C1B20761623000EAF98 /* Crossbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E419C1A20761623000EAF98 /* Crossbow.swift */; };
+		9E9DE9152088B0F00041BC3F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9DE9142088B0F00041BC3F /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		9E40697A206BA00A00CA75BD /* Axe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axe.swift; sourceTree = "<group>"; };
 		9E40697C206BA02200CA75BD /* Threat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threat.swift; sourceTree = "<group>"; };
 		9E419C1A20761623000EAF98 /* Crossbow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crossbow.swift; sourceTree = "<group>"; };
+		9E9DE9142088B0F00041BC3F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				9E2E3BFC206ADBE400B531A2 /* main.swift */,
+				9E9DE9142088B0F00041BC3F /* Game.swift */,
 			);
 			path = GAME;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				9E406974206B94EC00CA75BD /* Dwarf.swift in Sources */,
 				9E406977206B9FD700CA75BD /* Weapon.swift in Sources */,
 				9E40696C206B90F500CA75BD /* Character.swift in Sources */,
+				9E9DE9152088B0F00041BC3F /* Game.swift in Sources */,
 				9E406979206B9FFC00CA75BD /* Sword.swift in Sources */,
 				9E406970206B94CC00CA75BD /* Mage.swift in Sources */,
 				9E419C1B20761623000EAF98 /* Crossbow.swift in Sources */,
