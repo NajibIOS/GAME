@@ -9,19 +9,16 @@
 import Foundation
 
 class Game {
-    var teams = [Team]()
-    var round = 0
-    func winner() {
-        
+    private var teams = [Team]()
+    private var round = 0
+    private func winner() {
         for i in 0..<teams.count {
-            
             if !teams[i].teamIsDead() {
                 print ("Team \(i+1) Win")
                 print ("The In Duration \(round) rounds")
             }
         }
     }
-    
     func start()  {
         welcome()
         // CREATION TEAMS
@@ -33,22 +30,19 @@ class Game {
         fight()
         winner()
     }
-    
     // First Page "WELCOME"
-    func welcome() {
+    private func welcome() {
         print("")
         print("===============================")
         print("Welcome in the world of the darkness. Only the strongest will survive")
         print("===============================")
     }
-    
-    func createTeam() -> Team {
+    private func createTeam() -> Team {
         let team = Team()
         team.createCharacters()
         return team
     }
-    
-    func chest(target : Character) {
+    private func chest(target : Character) {
         // Create a var Which is going to contain a random number between 0 and 100
         let randomNumber = arc4random_uniform(100)
         // If the random number is lower than 20
@@ -64,7 +58,7 @@ class Game {
             }
         }
     }
-    func input() -> Int {
+    private func input() -> Int {
         var userSelection = 0
         repeat {
             if let data = readLine() {
@@ -75,84 +69,51 @@ class Game {
         } while userSelection != 1 && userSelection != 2 && userSelection != 3
         return userSelection
     }
-    
-    func attackAction(i: Int, character: Character)  {
+    private func attackAction(i: Int, character: Character)  {
         teams[i+1].description()
-        
-        
         // Select the caracter to Attack
         let victim = teams[i+1].characters[input() - 1]
-        
         // Make the action to Attack
         character.toAttack(target: victim)
     }
-    
-    
-
-    
-    func fight() {
-        
+    private func fight() {
         var userSelection = 0
-        
         while true {
-            
             for i in 0..<teams.count {
-                
                 // Choose the team that make the action
                 teams[i].description()
-                
                 // Choose the character that make the action
-                
                 userSelection = input()
-                
                 let character = teams[i].characters[userSelection - 1]
-                
                 chest(target: character)
-                
                 // Determine if the character chosen is a Mage
-                
                 if let mage = character as? Mage {
-                    
                     //  if the character chosen is a monster
                     // List the team of Mage
-                    
                     teams[i].description()
-                    
                     // Select the character  to threat
-                    
                     userSelection = input()
-                    
                     let character = teams[i].characters[userSelection - 1]
-                    
                     // Threat the character
-                    
                     mage.threat(target: character)
-                    
                 } else {
-                    
                     if i == 0 {
                         attackAction(i: i+1 , character: character)
                         if teams[i+1].teamIsDead(){
                             return
                         }
                     } else {
-                        
                          attackAction(i: i-1 , character: character)
-                        
                             //  Game Over, and make fignt again
                             if teams[i-1].teamIsDead(){
                                 return
                             }
                      }
                 }
-                
             }
             round += 1
         }
-        
-        
     }
-    
 }
                         
 

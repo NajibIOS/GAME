@@ -11,7 +11,6 @@ import Foundation
 class Team {
     
     var characters = [Character]()
-    var uniqueCharacterName = [String]()
     //CREATE THE CHARACTERS AND ADD THEIR TO THA ARRRAY "CHARACTERS"
     func createCharacters() {
         

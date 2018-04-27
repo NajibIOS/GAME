@@ -13,7 +13,7 @@ class Dwarf: Character {
     // DWARF - Init
     
     init(name:String) {
-        super.init(name: name, weapon: Sword(), life: 90)
+        super.init(name: name, weapon: Crossbow(), life: 90)
     }
     
 }

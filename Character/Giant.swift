@@ -13,7 +13,7 @@ class Giant: Character {
     // GIANT - Init
     
     init(name:String) {
-        super.init(name: name, weapon: Sword(), life: 90)
+        super.init(name: name, weapon: Axe(), life: 90)
     }
     
 }

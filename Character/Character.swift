@@ -12,9 +12,10 @@ class Character {
     
     // CHARACTER - Var
     
-    var name: String
+    let name: String
     var life: Int
     var weapon : Weapon
+    let maxLife : Int
     
     // CHARACTER - Init
     
@@ -22,12 +23,16 @@ class Character {
         self.name = name
         self.life = life
         self.weapon = weapon
+        self.maxLife = life
     }
     // CHARACTER - Methodes
     
     func toAttack (target: Character) {
         // retir the point life to the  target
         target.life -= weapon.damage
+        // Verifier que le personnage qui attaque est toujours vivante
+        // verifie que la target est toujpurs vivante
+        // faire en sorte que les point de vie ne soient pas négatifs
     }
     
     func description(index: Int) {
