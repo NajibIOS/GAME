@@ -10,20 +10,17 @@ import Foundation
 
 class Weapon {
     
-    // FEATURES - Var
+    // WEAPON - Var
     
     var name: String
     var damage: Int
     var magicPower: Int
     
-    // FEATURES - Init
+    // WEAPON - Init
     init(name: String , damage: Int, magicPower: Int) {
         self.name = name
         self.damage = damage
         self.magicPower = magicPower
         
     }
-    // FEATURES: - Methodes
-    
-    
 }

@@ -9,8 +9,7 @@
 import Foundation
 
 class Dwarf: Character {
-    
-    
+
     // DWARF - Init
     
     init(name:String) {

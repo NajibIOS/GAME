@@ -10,7 +10,7 @@ import Foundation
 
 class Threat : Weapon {
     
-    // FEATURES - Init
+    // THREAT - Init
     init() {
         super.init(name: "threat", damage: 0, magicPower: 20)
     }

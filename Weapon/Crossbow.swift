@@ -10,7 +10,7 @@ import Foundation
 
 class Crossbow : Weapon {
     
-    // FEATURES - Init
+    // CROSSBOW - Init
     init() {
         super.init(name: "crossbow", damage: 20, magicPower: 0)
     }

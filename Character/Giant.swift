@@ -10,8 +10,7 @@ import Foundation
 
 class Giant: Character {
     
-    
-    // Giant - Init
+    // GIANT - Init
     
     init(name:String) {
         super.init(name: name, weapon: Sword(), life: 90)

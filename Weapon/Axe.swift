@@ -10,7 +10,7 @@ import Foundation
 
 class Axe : Weapon {
     
-    // FEATURES - Init
+    // AXE - Init
     init() {
         super.init(name: "axe", damage: 15, magicPower: 0)
     }

@@ -10,20 +10,20 @@ import Foundation
 
 class Character {
     
-    //WARRIORS - Var
+    // CHARACTER - Var
     
     var name: String
     var life: Int
     var weapon : Weapon
     
-    // WARRIORS - Init
+    // CHARACTER - Init
     
     init(name: String ,weapon: Weapon, life: Int) {
         self.name = name
         self.life = life
         self.weapon = weapon
     }
-    // WARRIORS - Methodes
+    // CHARACTER - Methodes
     
     func toAttack (target: Character) {
         // retir the point life to the  target

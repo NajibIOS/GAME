@@ -10,7 +10,6 @@ import Foundation
 
 class Mage: Character {
     
-    
     // MAGE - Init
     
     init(name:String) {

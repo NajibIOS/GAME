@@ -9,8 +9,7 @@
 import Foundation
 
 class Warrior: Character {
-    
-    
+
     // WARRIORS - Init
     
     init(name:String) {
