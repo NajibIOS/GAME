@@ -49,15 +49,23 @@ class Game {
     }
     
     func chest(target : Character) {
-        
-        // Creer une var qui va contenir un nombre aléatoire compris entre 0 et 100
-        // Si le nombre aléatoire est inferieur à 20
-        // modifier l'arme de la target
-        // si la target est un mage tu lui equipe avec l'arme magique du mage
-        // si la target est un combattant tu lui equipe avec l'arme magique du combattant
-        
-        //des fonction en swifit qui permert de creer des nombres aléatoire
+        //des fonction en swift qui permert de creer des nombres aléatoire
+        // Create a var Which is going to contain a random number between 0 and 100
+        let randomNumber = arc4random_uniform(100)
+        // If the random number is lower than 20
+        if randomNumber < 20 {
+            print("A Mysterious Chest Appears, An Overpowered Weapon Is Inside")
+            // Modify the weapon of the target
+            if target is Mage {
+                // If the target is "Mage" equips him with the magic weapon
+                target.weapon = LanternShield()
+                print(target.name + " Open The Chest And Equip Himself With " + target.weapon.name )
+            } else {
+                target.weapon = Scepter()
+            }
+        }
     }
+}
     
     func fight() {
         
