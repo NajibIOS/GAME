@@ -10,30 +10,28 @@ import Foundation
 
 class Game {
     var teams = [Team]()
-    
+    var round = 0
     func winner() {
         
-        if teams[0].teamIsDead() == true {
+        for i in 0..<teams.count {
             
-            print ("l'equipe 2 à gagnée")
-        } else {
-            
-            print ("l'equipe 1 à gagnée")
+            if !teams[i].teamIsDead() {
+                print ("Team \(i+1) Win")
+                print ("The In Duration \(round) rounds")
+            }
         }
-        // Refaire cette methode pour quelle soit dynamique
-        
-        
     }
-    //WARRIORS: - Methodes
+    
     func start()  {
         welcome()
-        // CREATION EQUIPES
+        // CREATION TEAMS
         for i in 0..<2 {
-            print("Constitution Equipe N° \(i+1)")
+            print("Team Constitution N° \(i+1)")
             let team = createTeam()
             teams.append (team)
         }
         fight()
+        winner()
     }
     
     // First Page "WELCOME"

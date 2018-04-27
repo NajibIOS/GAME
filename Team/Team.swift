@@ -12,6 +12,7 @@ class Team {
     
     var characters = [Character]()
     var uniqueCharacterName = [String]()
+    //CREATE THE CHARACTERS AND ADD THEIR TO THA ARRRAY "CHARACTERS"
     func createCharacters() {
         
         for i in 0..<3 {
@@ -55,26 +56,19 @@ class Team {
             default:
                 break
             }
-            
-            
         }
-        
-        //CREER LES PERSONNAGES ET LES AJOUTER AUX TABLEAUX CHARECTERS LIGNE 13
-        
     }
+    
     
     func description() {
         for i in 0..<characters.count {
             let character = characters[i]
             character.description(index: i+1)
         }
-        
     }
     
     func teamIsDead() -> Bool {
-        
         var life = false
-        
         for character in characters {
             if character.life == 0 {
                 life = true
@@ -83,22 +77,5 @@ class Team {
             }
         }
         return life
-        
-        // Check les points de vie de chaque membre de l'equipe
-        //for checkingLife() = true {
-        //    return
-        //}
-        
-        //        if life == true {
-        //
-        //            // Si un personnage est en vie tu return "false"
-        //            return false
-        //
-        //              }
-        //        else {
-        //            // Si tout les personnage sont morts tu return "true"
-        //            return life
-        //             }
-        //
     }
 }
