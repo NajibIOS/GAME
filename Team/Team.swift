@@ -11,16 +11,16 @@ import Foundation
 class Team {
     
     var characters = [Character]()
-    
+    var uniqueCharacterName = [String]()
     func createCharacters() {
+        
         for i in 0..<3 {
             
             var userSelection = 0
-            var characterName = ""
             
             print("")
             print("===============================")
-            print("Choisissez le type de personnage N°\(i+1) à ajouter!")
+            print("Choose The Kind Of Character N°\(i+1) To Add!")
             print("1 - Warriors")
             print("2 - Mage")
             print("3 - Colosse")
@@ -28,15 +28,16 @@ class Team {
             print("===============================")
             
             repeat {
-                userSelection = Input.inputInt()
+                if let data = readLine() {
+                    if let dataToInt = Int(data) {
+                        userSelection = dataToInt
+                    }
+                }
             } while userSelection != 1 && userSelection != 2 && userSelection != 3 && userSelection != 4
             
-            print("saisir le nom de votre personage")
+            print("Enter Your Character Name")
             
-            repeat {
-                characterName = Input.inputString()
-            } while characterName == ""
-            
+            let characterName = NameService.shared.nameWarriors()
             
             switch userSelection {
             case 1:
@@ -46,11 +47,11 @@ class Team {
                 let mage = Mage(name: characterName)
                 characters.append(mage)
             case 3:
-                let colosse = Colosse(name: characterName)
-                characters.append(colosse)
+                let giant = Giant (name: characterName)
+                characters.append(giant)
             case 4:
-                let nain = Nain(name: characterName)
-                characters.append(nain)
+                let dwarf = Dwarf (name: characterName)
+                characters.append(dwarf)
             default:
                 break
             }
