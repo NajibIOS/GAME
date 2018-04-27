@@ -84,10 +84,18 @@
 		9E2E3BFB206ADBE400B531A2 /* GAME */ = {
 			isa = PBXGroup;
 			children = (
+				9E3C1F0220933AA800A6176D /* Helper */,
 				9E2E3BFC206ADBE400B531A2 /* main.swift */,
 				9E9DE9142088B0F00041BC3F /* Game.swift */,
 			);
 			path = GAME;
+			sourceTree = "<group>";
+		};
+		9E3C1F0220933AA800A6176D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		9E40696A206B8E7200CA75BD /* Character */ = {

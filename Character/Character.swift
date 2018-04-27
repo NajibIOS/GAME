@@ -11,7 +11,6 @@ import Foundation
 class Character {
     
     //WARRIORS - Var
-    // ACTION : Attack or Treat
     
     var name: String
     var life: Int
@@ -23,5 +22,15 @@ class Character {
         self.name = name
         self.life = life
         self.weapon = weapon
-}
+    }
+    // WARRIORS - Methodes
+    
+    func toAttack (target: Character) {
+        // retir the point life to the  target
+        target.life -= weapon.damage
+    }
+    
+    func description(index: Int) {
+        print("\(index) " + name + " - \(life) pv - \(weapon.damage) damage")
+    }
 }

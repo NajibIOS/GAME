@@ -9,9 +9,6 @@
 import Foundation
 
 class Game {
-    
-    //WARRIORS: - Var
-    
     var teams = [Team]()
     
     func winner() {
