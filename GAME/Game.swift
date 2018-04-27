@@ -49,7 +49,6 @@ class Game {
     }
     
     func chest(target : Character) {
-        //des fonction en swift qui permert de creer des nombres aléatoire
         // Create a var Which is going to contain a random number between 0 and 100
         let randomNumber = arc4random_uniform(100)
         // If the random number is lower than 20
@@ -84,7 +83,7 @@ class Game {
         // Select the caracter to Attack
         let victim = teams[i+1].characters[input() - 1]
         
-        // Make the action to Attack 
+        // Make the action to Attack
         character.toAttack(target: victim)
     }
     
@@ -99,100 +98,61 @@ class Game {
             
             for i in 0..<teams.count {
                 
-                // lister l'equipe qui fait l'action,
+                // Choose the team that make the action
                 teams[i].description()
                 
+                // Choose the character that make the action
                 
-                // selectionner un character dans la liste
-                
-                repeat {
-                    userSelection = Input.inputInt()
-                } while userSelection != 1 && userSelection != 2 && userSelection != 3
-                
+                userSelection = input()
                 
                 let character = teams[i].characters[userSelection - 1]
                 
                 chest(target: character)
                 
-                // Determiner si le character selectionner est un Mage
+                // Determine if the character chosen is a Mage
                 
                 if let mage = character as? Mage {
                     
-                    // Si c'est un mage
-                    // lister l'equipe du Mage
+                    //  if the character chosen is a monster
+                    // List the team of Mage
                     
                     teams[i].description()
                     
-                    // Integrer la fonction du coffre magique "ThreatChest"
+                    // Select the character  to threat
                     
-                    // Selectionner le character a soigner
-                    
-                    repeat {
-                        userSelection = Input.inputInt()
-                    } while userSelection != 1 && userSelection != 2 && userSelection != 3
+                    userSelection = input()
                     
                     let character = teams[i].characters[userSelection - 1]
                     
-                    // Soigner le character
+                    // Threat the character
+                    
                     mage.threat(target: character)
                     
                 } else {
                     
                     if i == 0 {
-                        
-                        teams[i+1].description()
-                        
-                        // Integrer la fonction du coffre magique "Chest"
-                        
-                        //ThreatChest.threat(target: character)
-                        
-                        // Selectionner le personnage a attacquer
-                        
-                        repeat {
-                            userSelection = Input.inputInt()
-                        } while userSelection != 1 && userSelection != 2 && userSelection != 3
-                        
-                        let victim = teams[i+1].characters[userSelection - 1]
-                        
-                        
-                        // Faire l'action d'attaquer le character
-                        character.toAttack(target: victim)
-                        
+                        attackAction(i: i+1 , character: character)
                         if teams[i+1].teamIsDead(){
                             return
                         }
-                        
-                        
                     } else {
                         
-                        teams[i-1].description()
+                         attackAction(i: i-1 , character: character)
                         
-                        // Selectionner le personnage a attacquer
-                        
-                        repeat {
-                            userSelection = Input.inputInt()
-                        } while userSelection != 1 && userSelection != 2 && userSelection != 3
-                        
-                        let victim = teams[i-1].characters[userSelection - 1]
-                        
-                        
-                        // Faire l'action d'attaquer le character
-                        character.toAttack(target: victim)
-                        if teams[i-1].teamIsDead(){
-                            return
-                        }
-                    }
-                    // Si c'est un combattant
-                    // Lister l'equipe adverse
-                    
-                    
+                            //  Game Over, and make fignt again
+                            if teams[i-1].teamIsDead(){
+                                return
+                            }
+                     }
                 }
                 
             }
-            
+            round += 1
         }
         
         
     }
-
+    
 }
+                        
+
