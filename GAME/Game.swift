@@ -65,7 +65,31 @@ class Game {
             }
         }
     }
-}
+    func input() -> Int {
+        var userSelection = 0
+        repeat {
+            if let data = readLine() {
+                if let dataToInt = Int(data) {
+                    userSelection = dataToInt
+                }
+            }
+        } while userSelection != 1 && userSelection != 2 && userSelection != 3
+        return userSelection
+    }
+    
+    func attackAction(i: Int, character: Character)  {
+        teams[i+1].description()
+        
+        
+        // Select the caracter to Attack
+        let victim = teams[i+1].characters[input() - 1]
+        
+        // Make the action to Attack 
+        character.toAttack(target: victim)
+    }
+    
+    
+
     
     func fight() {
         
