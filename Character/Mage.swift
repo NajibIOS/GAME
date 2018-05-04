@@ -17,9 +17,17 @@ class Mage: Character {
     }
     
     func threat(target: Character) {
-        target.life += weapon.magicPower
-        // Faire en sorte que le perssonage mort ne paeut soigner (Si le mage est ne peut pas soigner)
-        // Verifier que la taget est toujours vivante avant de la soigner
-        // faire en sorte de ne pas dépasser les points de vie max apres un soin (Si on est a 100 % , si on soigne a 20 , ça doit soigner à 0 )
+        if life > 0 {
+            if target.life > 0 {
+                target.life += weapon.magicPower
+                if target.life > target.maxLife {
+                    target.life = target.maxLife
+                }
+            }else{
+                print("La Cible ne pet pas etre soigne car elle est morte")
+            }
+        }else{
+            print ("Le Mage Ne peut Pas Soigner Car Il Est Mort")
+        }
     }
 }

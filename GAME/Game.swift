@@ -9,8 +9,12 @@
 import Foundation
 
 class Game {
+    
+    // MARK: - VARS
     private var teams = [Team]()
     private var round = 0
+    
+    // MARK: - CLASS METHODS
     private func winner() {
         for i in 0..<teams.count {
             if !teams[i].teamIsDead() {
@@ -19,6 +23,7 @@ class Game {
             }
         }
     }
+    
     func start()  {
         welcome()
         // CREATION TEAMS
@@ -30,6 +35,7 @@ class Game {
         fight()
         winner()
     }
+    
     // First Page "WELCOME"
     private func welcome() {
         print("")
@@ -37,11 +43,13 @@ class Game {
         print("Welcome in the world of the darkness. Only the strongest will survive")
         print("===============================")
     }
+    
     private func createTeam() -> Team {
         let team = Team()
         team.createCharacters()
         return team
     }
+    
     private func chest(target : Character) {
         // Create a var Which is going to contain a random number between 0 and 100
         let randomNumber = arc4random_uniform(100)
@@ -58,6 +66,7 @@ class Game {
             }
         }
     }
+    
     private func input() -> Int {
         var userSelection = 0
         repeat {
@@ -69,6 +78,7 @@ class Game {
         } while userSelection != 1 && userSelection != 2 && userSelection != 3
         return userSelection
     }
+    
     private func attackAction(i: Int, character: Character)  {
         teams[i+1].description()
         // Select the caracter to Attack
@@ -76,6 +86,7 @@ class Game {
         // Make the action to Attack
         character.toAttack(target: victim)
     }
+    
     private func fight() {
         var userSelection = 0
         while true {
