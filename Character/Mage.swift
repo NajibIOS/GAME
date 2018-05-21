@@ -24,10 +24,10 @@ class Mage: Character {
                     target.life = target.maxLife
                 }
             }else{
-                print("La Cible ne pet pas etre soigne car elle est morte")
+                print("The Target Can't To Be Threated Because She Died")
             }
         }else{
-            print ("Le Mage Ne peut Pas Soigner Car Il Est Mort")
+            print ("The Mage Can't Threat Beacause He Died")
         }
     }
 }

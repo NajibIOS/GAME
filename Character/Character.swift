@@ -29,21 +29,22 @@ class Character {
     
     func toAttack (target: Character) {
         if life > 0 {
-            // retir the point life to the  target
-            
-            // Verifier que le personnage qui attaque est toujours vivante
+            // Verify that the character who attacks is always alive
             if target.life > 0 {
+                // retir the point life to the  target
                 target.life -= weapon.damage
+                // Verify that the target is always alive
                 if target.life < 0 {
+                //Do so that no life are not negative
                     target.life = 0
                 }
             }else{
-                print( "On Ne Peut Pas Attaquer un Personnage Mort")
+                print( "We Can't To Attack A Dead Character")
             }
-            // verifie que la target est toujpurs vivante
-            // faire en sorte que les point de vie ne soient pas négatifs
+            
+            
         }else{
-            print("les personnage ne peut attaquer car il est mort")
+            print("The Character Can't Attack He Died")
         }
     }
     
